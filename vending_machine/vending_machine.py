@@ -3,6 +3,7 @@ class VendingMachine:
 
     def __init__(self):
         self._deposit = 0
+        self._sales_amount = 0
         self._beverages = [
             {"name": "cola", "price": 120, "count": 5},
         ]
@@ -39,8 +40,9 @@ class VendingMachine:
                 if beverage["name"] == beverage_name:
                     beverage["count"] -= 1
                     self._deposit -= beverage["price"]
+                    self._sales_amount += beverage["price"]
                     return beverage_name
         return None
 
     def sales_amount(self):
-        pass
+        return self._sales_amount
