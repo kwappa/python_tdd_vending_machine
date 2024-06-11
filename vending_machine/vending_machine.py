@@ -18,3 +18,9 @@ class VendingMachine:
         deposit = self._deposit
         self._deposit = 0
         return deposit
+
+    def add_beverage(self, beverage):
+        pass
+
+    def beverages(self):
+        pass
