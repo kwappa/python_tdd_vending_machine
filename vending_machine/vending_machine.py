@@ -3,4 +3,4 @@ class VendingMachine:
         pass
 
     def insert_money(self, money):
-        pass
+        return money
