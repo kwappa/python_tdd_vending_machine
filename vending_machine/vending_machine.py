@@ -26,4 +26,4 @@ class VendingMachine:
         return self._beverages
 
     def is_buyable(self, beverage_name):
-        return False
+        return self._deposit >= 120
