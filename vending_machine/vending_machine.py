@@ -11,4 +11,6 @@ class VendingMachine:
         return self._deposit
 
     def refund(self):
-        pass
+        deposit = self._deposit
+        self._deposit = 0
+        return deposit
