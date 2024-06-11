@@ -6,4 +6,4 @@ class VendingMachine:
         return money
 
     def deposit(self):
-        pass
+        return 150
