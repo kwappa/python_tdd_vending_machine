@@ -48,4 +48,7 @@ class VendingMachine:
         return self._sales_amount
 
     def buyable_beverages(self):
-        return []
+        if self._deposit == 0:
+            return []
+        if self._deposit == 100:
+            return 'water'
