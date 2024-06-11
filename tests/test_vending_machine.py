@@ -39,3 +39,14 @@ class TestVendingMachine(unittest.TestCase):
         self.assertEqual(self.vm.buy("cola"), "cola")
         self.assertEqual(self.vm.deposit(), 380)
         self.assertEqual(self.vm.beverages(), [{"name": "cola", "price": 120, "count": 4}])
+
+        # cannot buy because of luck of deposit
+        for _ in range(3): print(self.vm.buy("cola"))
+        self.assertEqual(self.vm.deposit(), 20)
+        self.assertIsNone(self.vm.buy("cola"))
+
+        # cannot buy because of luck of stock
+        self.vm.insert_money(500)
+        self.assertTrue(self.vm.buy("cola"), "cola")
+        self.assertEqual(self.vm.deposit(), 400)
+        self.assertIsNone(self.vm.buy("cola"))
