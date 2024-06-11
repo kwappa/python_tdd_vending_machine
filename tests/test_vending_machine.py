@@ -12,3 +12,10 @@ class TestVendingMachine(unittest.TestCase):
         self.assertEqual(vm.deposit(), 100)
         vm.insert_money(50)
         self.assertEqual(vm.deposit(), 150)
+
+    def test_refund(self):
+        vm = VendingMachine()
+        vm.insert_money(200)
+        vm.insert_money(100)
+        self.assertEqual(vm.refund(), 300)
+        self.assertEqual(vm.deposit(), 0)

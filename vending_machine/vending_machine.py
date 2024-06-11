@@ -9,3 +9,6 @@ class VendingMachine:
 
     def deposit(self):
         return self._deposit
+
+    def refund(self):
+        pass
