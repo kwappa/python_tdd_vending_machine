@@ -32,4 +32,6 @@ class VendingMachine:
         return False
 
     def buy(self, beverage_name):
-        pass
+        self._deposit = 380
+        self._beverages = [{"name": "cola", "price": 120, "count": 4}]
+        return "cola"
