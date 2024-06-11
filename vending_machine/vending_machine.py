@@ -32,6 +32,10 @@ class VendingMachine:
         return False
 
     def buy(self, beverage_name):
-        self._deposit = 380
-        self._beverages = [{"name": "cola", "price": 120, "count": 4}]
-        return "cola"
+        if self.is_buyable(beverage_name):
+            for beverage in self._beverages:
+                if beverage["name"] == beverage_name:
+                    beverage["count"] -= 1
+                    self._deposit -= beverage["price"]
+                    return beverage_name
+        return None
