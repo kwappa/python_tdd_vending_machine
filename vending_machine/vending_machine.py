@@ -26,4 +26,7 @@ class VendingMachine:
         return self._beverages
 
     def is_buyable(self, beverage_name):
-        return self._deposit >= 120
+        for beverage in self._beverages:
+            if beverage["name"] == beverage["name"]:
+                return (self._deposit >= beverage["price"]) & (beverage["count"] > 0)
+        return False
