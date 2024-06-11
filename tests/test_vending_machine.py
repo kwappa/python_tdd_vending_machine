@@ -58,6 +58,7 @@ class TestVendingMachine(unittest.TestCase):
         self.assertEqual(self.vm.sales_amount(), 120)
         self.vm.buy("cola")
         self.assertEqual(self.vm.sales_amount(), 240)
+        self.assertEqual(self.vm.refund(), 260)
 
     def test_add_beverage(self):
         self.vm.add_beverage({"name": "water",   "price": 100, "count": 5})
