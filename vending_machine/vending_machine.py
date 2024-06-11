@@ -41,3 +41,6 @@ class VendingMachine:
                     self._deposit -= beverage["price"]
                     return beverage_name
         return None
+
+    def sales_amount(self):
+        pass
