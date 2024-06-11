@@ -3,7 +3,11 @@ class VendingMachine:
 
     def __init__(self):
         self._deposit = 0
-        self._beverages = [{"name": "cola", "price": 120, "count": 5}]
+        self._beverages = [
+            {"name": "cola", "price": 120, "count": 5},
+            {"name": "water", "price": 100, "count": 5},
+            {"name": "redbull", "price": 200, "count": 5},
+        ]
 
     def insert_money(self, money):
         if money not in self.ACCEPTABLE_MONEYS:

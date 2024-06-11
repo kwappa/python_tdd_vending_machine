@@ -27,7 +27,7 @@ class TestVendingMachine(unittest.TestCase):
         self.assertEqual(self.vm.deposit(), 100)
 
     def test_initial_beverages(self):
-        self.assertEqual(self.vm.beverages(), [{"name": "cola", "price": 120, "count": 5}])
+        self.assertTrue({"name": "cola", "price": 120, "count": 5} in self.vm.beverages())
 
     def test_is_buyable(self):
         self.assertFalse(self.vm.is_buyable("cola"))
@@ -38,7 +38,7 @@ class TestVendingMachine(unittest.TestCase):
         self.vm.insert_money(500)
         self.assertEqual(self.vm.buy("cola"), "cola")
         self.assertEqual(self.vm.deposit(), 380)
-        self.assertEqual(self.vm.beverages(), [{"name": "cola", "price": 120, "count": 4}])
+        self.assertTrue({"name": "cola", "price": 120, "count": 4} in self.vm.beverages())
 
         # cannot buy because of luck of deposit
         for _ in range(3): self.vm.buy("cola")
