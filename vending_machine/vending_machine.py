@@ -30,3 +30,6 @@ class VendingMachine:
             if beverage["name"] == beverage["name"]:
                 return (self._deposit >= beverage["price"]) & (beverage["count"] > 0)
         return False
+
+    def buy(self, beverage_name):
+        pass

@@ -33,3 +33,9 @@ class TestVendingMachine(unittest.TestCase):
         self.assertFalse(self.vm.is_buyable("cola"))
         self.vm.insert_money(500)
         self.assertTrue(self.vm.is_buyable("cola"))
+
+    def test_buy_cola(self):
+        self.vm.insert_money(500)
+        self.assertEqual(self.vm.buy("cola"), "cola")
+        self.assertEqual(self.vm.deposit(), 380)
+        self.assertEqual(self.vm.beverages(), [{"name": "cola", "price": 120, "count": 4}])
