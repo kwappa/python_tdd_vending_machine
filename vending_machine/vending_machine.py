@@ -5,8 +5,6 @@ class VendingMachine:
         self._deposit = 0
         self._beverages = [
             {"name": "cola", "price": 120, "count": 5},
-            {"name": "water", "price": 100, "count": 5},
-            {"name": "redbull", "price": 200, "count": 5},
         ]
 
     def insert_money(self, money):
@@ -24,7 +22,7 @@ class VendingMachine:
         return deposit
 
     def add_beverage(self, beverage):
-        pass
+        self._beverages.append(beverage)
 
     def beverages(self):
         return self._beverages
