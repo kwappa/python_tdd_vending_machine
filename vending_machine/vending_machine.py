@@ -46,3 +46,6 @@ class VendingMachine:
 
     def sales_amount(self):
         return self._sales_amount
+
+    def buyable_beverages(self):
+        return ['cola']

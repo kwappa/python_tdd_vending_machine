@@ -66,3 +66,9 @@ class TestVendingMachine(unittest.TestCase):
         self.assertTrue({"name": "water",   "price": 100, "count": 5} in self.vm.beverages())
         self.assertTrue({"name": "redbull", "price": 200, "count": 5} in self.vm.beverages())
         self.assertTrue({"name": "cola",    "price": 120, "count": 5} in self.vm.beverages())
+
+    def test_buyable_beverages(self):
+        self.vm.add_beverage({"name": "water",   "price": 100, "count": 5})
+        self.vm.add_beverage({"name": "redbull", "price": 200, "count": 5})
+        # nothing can buy before insert money
+        self.assertTrue(not any(beverage["name"] in self.vm.buyable_beverages() for beverage in self.vm.beverages()))
