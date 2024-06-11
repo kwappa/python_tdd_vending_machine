@@ -76,3 +76,6 @@ class TestVendingMachine(unittest.TestCase):
         self.vm.insert_money(100)
         self.assertIn("water", self.vm.buyable_beverages())
         self.assertNotIn("redbull", self.vm.buyable_beverages())
+        # can buy all items
+        self.vm.insert_money(500)
+        self.assertIn("redbull", self.vm.buyable_beverages())
