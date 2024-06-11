@@ -30,7 +30,7 @@ class VendingMachine:
 
     def is_buyable(self, beverage_name):
         for beverage in self._beverages:
-            if beverage["name"] == beverage["name"]:
+            if beverage_name == beverage["name"]:
                 return (self._deposit >= beverage["price"]) & (beverage["count"] > 0)
         return False
 
@@ -48,7 +48,4 @@ class VendingMachine:
         return self._sales_amount
 
     def buyable_beverages(self):
-        if self._deposit == 0:
-            return []
-        if self._deposit == 100:
-            return 'water'
+        return [beverage["name"] for beverage in self._beverages if self.is_buyable(beverage["name"])]
