@@ -19,3 +19,9 @@ class TestVendingMachine(unittest.TestCase):
         self.vm.insert_money(100)
         self.assertEqual(self.vm.refund(), 300)
         self.assertEqual(self.vm.deposit(), 0)
+
+    def test_acceptable_money(self):
+        self.vm.insert_money(100)
+        self.assertEqual(self.vm.deposit(), 100)
+        self.assertEqual(self.vm.insert_money(55), 55)
+        self.assertEqual(self.vm.deposit(), 100)
