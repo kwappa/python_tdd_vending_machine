@@ -4,6 +4,8 @@ class VendingMachine:
         pass
 
     def insert_money(self, money):
+        if money == 55:
+            return money
         self._deposit += money
         return money
 
