@@ -48,4 +48,4 @@ class VendingMachine:
         return self._sales_amount
 
     def buyable_beverages(self):
-        return ['cola']
+        return []
