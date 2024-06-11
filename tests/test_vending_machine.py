@@ -79,3 +79,6 @@ class TestVendingMachine(unittest.TestCase):
         # can buy all items
         self.vm.insert_money(500)
         self.assertIn("redbull", self.vm.buyable_beverages())
+        # cannot buy sold-out item
+        for _ in range(5): self.vm.buy("water")
+        self.assertNotIn("water", self.vm.buyable_beverages())
