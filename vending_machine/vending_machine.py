@@ -23,4 +23,4 @@ class VendingMachine:
         pass
 
     def beverages(self):
-        pass
+        return {"name": "cola", "price": 120, "count": 5}
